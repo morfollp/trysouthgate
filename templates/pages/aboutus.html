@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <section
+                class="inner-banner flex-center"
+                style="background: url(/static/images/banner-about.png)"
+            >
+                <div class="inner-title">
+                    <h1>About Us</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li
+                                class="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                About
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+        </header>
+
+        <section class="about-section py-5">
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-lg-6">
+                        <div class="pic-banner">
+                            <div class="about-pic-full">
+                                <div class="card-image">
+                                    <img
+                                        src="{% static 'images/about-left.png' %}"
+                                        alt=""
+                                        class="img-fluid"
+                                    />
+                                </div>
+                            </div>
+                            <div class="about-pic-thumbnail">
+                                <img
+                                    src="{% static 'images/about-left-thumb.png' %}"
+                                    alt=""
+                                    class="img-fluid"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5">
+                        <div class="home-about-content">
+                            <div class="title-head mb-5">
+                                <p class="subhead">WHO WE ARE</p>
+                                <h1 class="mainhead">
+                                    Best Immigration & Visa Consultation.
+                                </h1>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Welcome to South Gate Immigration, your
+                                    trusted partner in turning dreams of working
+                                    abroad into reality. Based in the heart of
+                                    Kerala, we specialize in comprehensive
+                                    recruitment services, work visa
+                                    facilitation, VFS assistance, and expert
+                                    guidance on European visas. Our mission is
+                                    to connect talented individuals with
+                                    promising job opportunities across Europe,
+                                    helping them embark on successful
+                                    international careers. At South Gate
+                                    Immigration, we are committed to bridging
+                                    the gap between talent and opportunity,
+                                    empowering you to take the next step in your
+                                    professional journey.
+                                </p>
+                            </div>
+                            <div class="about-features-list d-flex flex-column">
+                                <div class="icon-details d-flex mt-4">
+                                    <div class="icon">
+                                        <i class="bi bi-airplane"></i>
+                                    </div>
+                                    <div class="col pe-lg-5">
+                                        <h5 class="mb-3">
+                                            Expertise Visa Process
+                                        </h5>
+                                        <p>
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Aliquid neque laborum autem sint
+                                            quisquam ea.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon-details d-flex mt-4">
+                                    <div class="icon">
+                                        <i class="bi bi-airplane"></i>
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="mb-3">
+                                            Professional Services
+                                        </h5>
+                                        <p>
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Aliquid neque laborum autem sint
+                                            quisquam ea. Lorem ipsum dolor sit
+                                            amet consectetur adipisicing elit.
+                                            Aliquid neque laborum autem sint
+                                            quisquam ea
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-main-service py-5">
+            <div class="container py-lg-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div
+                            class="title-head mb-5 text-center mx-auto col-lg-6 col-12"
+                        >
+                            <p class="subhead">OUR SERVICE</p>
+                            <h1 class="mainhead pe-lg-5 ps-lg-5">
+                                Outstanding  Immigration Visa Services
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pb-lg-5 mb-lg-5">
+                    {% for service in services %}
+                    <div class="col-lg-4">
+                        
+                        <div class="item-card">
+                            <div class="item-card-image card-image">
+                                <img
+                                    src="{{ service.service_image.url }}"
+                                    alt="Service Pic"
+                                    class="img-fluid"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <div class="card-inner">
+                                    <div
+                                        class="head d-flex align-items-center justify-content-between"
+                                    >
+                                        <h5>
+                                            <a href="#">{{ service.title }}</a>
+                                        </h5>
+                                        <div class="card-inner-icon">
+                                            <i class="bi bi-passport"></i>
+                                        </div>
+                                    </div>
+                                    <div class="content pt-3">
+                                        <p>
+                                            {{ service.description }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                        </div>
+                    </div>
+                          {% endfor %}
+                    <div class="col-12 text-center">
+                        <a href="services.html" class="btn btn-theme mt-5"
+                            >Read More</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            class="video-bg py-5"
+            style="
+                background: url(/static/images/video-banner.png) no-repeat center
+                    center;
+            "
+        >
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="video-caption">
+                            <h1 class="pe-lg-5">
+                                Most Trusted Immigration & VisaSolutions Agency
+                            </h1>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-6 d-flex align-items-center justify-content-center"
+                    >
+                        <div class="video-block flex-center">
+                            <div
+                                class="pulse flex-center"
+                                data-bs-toggle="modal"
+                                data-bs-target="#videoModal"
+                            >
+                                <i class="bi bi-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="countries-offer py-5">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="title-head mb-5 col-lg-6 col-12 mx-auto">
+                            <p class="subhead">COUNTRY WE OFFER</p>
+                            <h1 class="mainhead">
+                                Countries we're support for the immigration
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="owl-carousel owl-theme country-list">
+                        {% for country in countries %}
+                        <div class="country-item">
+                            <div class="item-image-body">
+                                <img
+                                    src="{{ country.country_image.url }}"
+                                    alt="{{ country.country_name }}"
+                                    class="img-fluid"
+                                />
+                                <div class="img-overlay-icon flex-center">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </div>
+                            </div>
+                            <div class="fig-caption mt-5">{{ country.name }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="team py-5">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="title-head mb-5 col-lg-6 col-12 mx-auto">
+                            <p class="subhead">OUR TEAM</p>
+                            <h1 class="mainhead">Experience Team Members</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member-block">
+                            <div class="team-card">
+                                <div class="card-image">
+                                    <img
+                                        src="{% static 'images/team-01.jpg' %}"
+                                        alt="Team"
+                                        class="img-fluid"
+                                    />
+                                </div>
+                            </div>
+                            <div class="team-card-caption">
+                                <h4>Shania Mariya</h4>
+                                <p>Managing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member-block">
+                            <div class="team-card">
+                                <div class="card-image">
+                                    <img
+                                        src="{% static 'images/team-02.jpg' %}"
+                                        alt="Team"
+                                        class="img-fluid"
+                                    />
+                                </div>
+                            </div>
+                            <div class="team-card-caption">
+                                <h4>David John</h4>
+                                <p>General Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member-block">
+                            <div class="team-card">
+                                <div class="card-image">
+                                    <img
+                                        src="{% static 'images/team-03.jpg' %}"
+                                        alt="Team"
+                                        class="img-fluid"
+                                    />
+                                </div>
+                            </div>
+                            <div class="team-card-caption">
+                                <h4>Sunitha Josh</h4>
+                                <p>Visa Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="count" id="counter-section">
+            <div class="container">
+                <div class="row flex-center">
+                    <div class="col-lg-4">
+                        <div class="counter-bg-img">
+                            <img
+                                src="{% static 'images/count-bg2.jpg' %}"
+                                alt="counter-bg"
+                                class="img-fluid"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pe-lg-5 ps-lg-5">
+                        <div class="title-head text-center mb-3">
+                            <h1 class="mainhead">
+                                Ready to fly with us your dream country
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="count-list-section">
+                            <div class="counter-grid">
+                                <div class="counter-container text-center">
+                                    <div class="counter-item">
+                                        <div class="count-wrapper pb-4">
+                                            <h4 class="counter">
+                                                <span class="counterup">5</span
+                                                >+
+                                            </h4>
+                                            <p>Visa Categories</p>
+                                        </div>
+                                    </div>
+                                    <p></p>
+                                </div>
+                                <div class="counter-container text-center">
+                                    <div class="counter-item">
+                                        <div class="count-wrapper pb-4">
+                                            <h4 class="counter">
+                                                <span class="counterup">10</span
+                                                >K
+                                            </h4>
+                                            <p>Visa Process</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="counter-container text-center">
+                                    <div class="counter-item">
+                                        <div class="count-wrapper pb-4">
+                                            <h4 class="counter">
+                                                <span class="counterup">99</span
+                                                >%
+                                            </h4>
+                                            <p>Success Rate</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

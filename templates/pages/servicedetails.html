@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <section
+                class="inner-banner flex-center"
+                style="background: url(/static/images/banner-service.png)"
+            >
+                <div class="inner-title">
+                    <h1>Services</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li
+                                class="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                Services
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+        </header>
+        <section class="services py-5">
+            <div class="container">
+                <div class="row py-5">
+                    
+                    <div class="col-lg-12">
+                        <div class="service-tab">
+                            <div class="d-flex align-items-start mbl-column">
+                                <div
+                                    class="nav flex-column nav-pills me-5"
+                                    id="v-pills-tab"
+                                    role="tablist"
+                                    aria-orientation="vertical"
+                                >
+                                {% for service in services %}
+
+                                    <button onclick="location.href='{% url 'servicedetails' service_title=service.slug servicefaq_service=faqs.id %}'"
+                                        class="nav-link active"
+                                        id="v-pills-home-tab"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-home"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="v-pills-home"
+                                        aria-selected="true"
+                                    >
+                                        <span
+                                            ><i class="bi bi-chevron-right"></i
+                                        ></span>
+                                       {{ service.title }}
+                                    </button>
+                                    {% endfor %}
+                                    <div class="add-banner mt-5">
+                                        <div class="add-banner-figure">
+                                            <div class="card-image">
+                                                <img
+                                                    src="{% static 'images/left-bg.jpg' %}"
+                                                    alt="sidebar Add"
+                                                    class="img-fluid"
+                                                />
+                                            </div>
+                                            <div class="add-banner-caption">
+                                                <h1 class="mainhead text-white">
+                                                    We’re doing the right thing.
+                                                    The right way.
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- --content------- -->
+                                <div
+                                    class="tab-content"
+                                    id="v-pills-tabContent"
+                                >
+                                    <div
+                                        class="tab-pane fade show active"
+                                        id="v-pills-home"
+                                        role="tabpanel"
+                                        aria-labelledby="v-pills-home-tab"
+                                        tabindex="0"
+                                    >
+                                    
+                                        <div class="content-section">
+                                            <div class="banner">
+                                                <img
+                                                    src="{{ single_services.service_image.url }}"
+                                                    alt="Worker Visa"
+                                                    class="img-fluid"
+                                                />
+                                            </div>
+                                            <div class="title-head py-4">
+                                                <h1 class="mainhead">
+                                                   {{ single_services.title }}
+                                                </h1>
+                                            </div>
+                                            <div class="content-text">
+                                                <p>
+                                                    {{ single_services.description }}
+                                                </p>
+                                            </div>
+                                            <div class="title-head py-4">
+                                                <h1 class="mainhead">
+                                                   {{ single_services.title2 }}
+                                                </h1>
+                                            </div>
+                                            <div class="content-text">
+                                                <p>
+                                                    {{ single_services.description2 }}
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="service-features row mt-5"
+                                            >
+                                                <div class="col-lg-6 col-6">
+                                                    <div class="list-hover-box">
+                                                        <span class="pe-3"
+                                                            ><i
+                                                                class="bi bi-check2-circle"
+                                                            ></i></span
+                                                        >{{ single_services.highlight1 }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-6">
+                                                    <div class="list-hover-box">
+                                                        <span class="pe-3"
+                                                            ><i
+                                                                class="bi bi-check2-circle"
+                                                            ></i></span
+                                                        >{{ single_services.highlight2 }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-6">
+                                                    <div class="list-hover-box">
+                                                        <span class="pe-3"
+                                                            ><i
+                                                                class="bi bi-check2-circle"
+                                                            ></i></span
+                                                        >{{ single_services.highlight3 }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-6">
+                                                    <div class="list-hover-box">
+                                                        <span class="pe-3"
+                                                            ><i
+                                                                class="bi bi-check2-circle"
+                                                            ></i></span
+                                                        >{{ single_services.highlight4 }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="faq-session">
+                                                <div class="title-head py-4">
+                                                    <h1 class="mainhead">
+                                                        Frequently Asked
+                                                        Question
+                                                    </h1>
+                                                </div>
+                                                <div
+                                                    class="accordion"
+                                                    id="accordionExample"
+                                                >
+                                                    <div class="accordion-item">
+                                                        {% for faq in servicefaqs %}
+                                                        <h2
+                                                            class="accordion-header"
+                                                        >
+                                                        
+                                                            <button
+                                                                class="accordion-button"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#collapseOne"
+                                                                aria-expanded="true"
+                                                                aria-controls="collapseOne"
+                                                            >
+                                                                {{ faq.question }}
+                                                            </button>
+                                                        </h2>
+                                                        <div
+                                                            id="collapseOne"
+                                                            class="accordion-collapse collapse show"
+                                                            data-bs-parent="#accordionExample"
+                                                        >
+                                                            <div
+                                                                class="accordion-body"
+                                                            >
+                                                                <p>
+                                                                    {{ faq.answer }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        {% endfor %}
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
