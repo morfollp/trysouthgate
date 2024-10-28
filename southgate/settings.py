@@ -129,7 +129,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 STATIC_FILE_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = (
-    BASE_DIR / "static",
+    BASE_DIR / "statics",
 )
 STATIC_ROOT = BASE_DIR / "static"
 
