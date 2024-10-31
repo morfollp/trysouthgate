@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'southgate.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://southgatedb_user:175HbnwTx7JE4MMqbGJFEaOTVDMHbSK5@dpg-csfppi9u0jms73fk8020-a/southgatedb',
+        default='postgresql://southgateuser:VDe9BNZBifIolA5hWAyIgNvAi98VApvh@dpg-cshn8fo8fa8c739gtqng-a.oregon-postgres.render.com/southgatedb_kj9a',
         conn_max_age=600
     )
 }
