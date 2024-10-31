@@ -38,7 +38,7 @@
                                 >
                                 {% for service in services %}
 
-                                    <button onclick="location.href='{% url 'servicedetails' service_title=service.slug servicefaq_service=faqs.id %}'"
+                                    <button onclick="location.href='{% url 'servicedetails' service_id=service.sid sfaqid=faqs.sfaqid %}'"
                                         class="nav-link active"
                                         id="v-pills-home-tab"
                                         data-bs-toggle="pill"

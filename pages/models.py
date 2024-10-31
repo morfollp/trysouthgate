@@ -9,21 +9,22 @@ from datetime import datetime
 # Create your models here.
 
 class Country(models.Model):
+    cid= models.AutoField(primary_key=True)
     name=models.CharField(max_length=50, unique= True)
     slug= models.SlugField(max_length= 100, unique= True)
     country_description= models.TextField(max_length= 5000, blank= True)
-    # capital= models.TextField(max_length= 255, blank= True)
-    # area= models.TextField(max_length= 255, blank= True)
-    # population= models.TextField(max_length= 255, blank= True)
-    # language= models.TextField(max_length= 255, blank= True)
-    # currency= models.TextField(max_length= 255, blank= True)
-    # government= models.TextField(max_length= 255, blank= True)
-    # regions= models.TextField(max_length= 255, blank= True)
-    # climate= models.TextField(max_length= 255, blank= True)
-    # major_industries= models.TextField(max_length= 255, blank= True)
-    # cultural_heritage= models.TextField(max_length= 255, blank= True)
-    # natural_features= models.TextField(max_length= 255, blank= True)
-    # membership= models.TextField(max_length= 255, blank= True)
+    capital= models.TextField(max_length= 255, blank= True)
+    area= models.TextField(max_length= 255, blank= True)
+    population= models.TextField(max_length= 255, blank= True)
+    language= models.TextField(max_length= 255, blank= True)
+    currency= models.TextField(max_length= 255, blank= True)
+    government= models.TextField(max_length= 255, blank= True)
+    regions= models.TextField(max_length= 255, blank= True)
+    climate= models.TextField(max_length= 255, blank= True)
+    major_industries= models.TextField(max_length= 255, blank= True)
+    cultural_heritage= models.TextField(max_length= 255, blank= True)
+    natural_features= models.TextField(max_length= 255, blank= True)
+    membership= models.TextField(max_length= 255, blank= True)
     country_image= models.ImageField(upload_to= 'photos/countries', blank=True)
 
     class Meta:
@@ -34,6 +35,7 @@ class Country(models.Model):
         return self.name
 
 class Service(models.Model):
+    sid= models.AutoField(primary_key=True)
     slug=models.CharField(max_length=50, unique= True)
     title=models.CharField(max_length=50, unique= True)
     description= models.TextField(max_length= 5000, blank= False)
@@ -54,8 +56,10 @@ class Service(models.Model):
         return self.title
 
 class Vacancy(models.Model):
+    vid= models.AutoField(primary_key=True)
     title=models.CharField(max_length=50, unique= False)
     slug= models.CharField(max_length=50, unique= True)
+    image= models.ImageField(upload_to= 'photos/vacancies', blank=False)
     description= models.TextField(max_length= 5000, blank= False)
     service_fee=models.CharField(max_length=50, default='0')
     country= models.ForeignKey(Country, on_delete=models.CASCADE, null=False, blank= False)
@@ -73,6 +77,7 @@ class Vacancy(models.Model):
         return self.country.name
 
 class CountryFaq(models.Model):
+    cfaqid= models.AutoField(primary_key=True)
     country= models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null= True)
     question= models.TextField(max_length= 5000, blank= False)
     answer= models.TextField(max_length= 5000, blank= False)
@@ -85,6 +90,7 @@ class CountryFaq(models.Model):
         return self.country.name
 
 class ServiceFaq(models.Model):
+    sfaqid= models.AutoField(primary_key=True)
     service= models.ForeignKey(Service, on_delete=models.CASCADE, blank=True, null= True)
     question= models.TextField(max_length= 5000, blank= False)
     answer= models.TextField(max_length= 5000, blank= False)
@@ -99,6 +105,7 @@ class ServiceFaq(models.Model):
 
 
 class Contact(models.Model):
+    
     name=models.CharField(max_length=50, unique= False)
     subject= models.TextField(max_length= 5000, blank= False)
     description= models.TextField(max_length= 5000, blank= False)
@@ -112,6 +119,7 @@ class Contact(models.Model):
         return self.name
 
 class Testimonial(models.Model):
+
     name=models.CharField(max_length=50, unique= False)
     title= models.CharField(max_length=50, unique= False)
     description= models.TextField(max_length= 255, blank= False)

@@ -78,12 +78,12 @@
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'servicedetails' service_title='freelance' servicefaq_service=1 %}"
+                                <a class="nav-link" href="{% url 'servicedetails' service_id='1' sfaqid='1' %}"
                                     >Services</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'vacancies' country_name='austria' country_id=1 vacancy_title='driver' countryfaq_country=1 %}"
+                                <a class="nav-link" href="{% url 'vacancies' cid='1' vacancy_id='1' cfaqid=1 %}"
                                     >Vacancies</a
                                 >
                             </li>
@@ -134,7 +134,7 @@
                                         Countries we Support
                                     </h3>
                                     {% for country in countries %}
-                                    <button onclick="location.href='{% url 'vacancies' country_name=country.slug country_id=vacancies.id vacancy_title=single_vacancy.title countryfaq_country=faqs.id %}'"
+                                    <button onclick="location.href='{% url 'vacancies' cid=country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}'"
                                         class="nav-link active"
                                         id="v-pills-home-tab"
                                         data-bs-toggle="pill"
@@ -293,11 +293,13 @@
                                                                 >
                                                                 
                                                                     <a
-                                                                        href="{% url 'vacancies' country_name=vacancy.country.slug country_id=vacancy.country.id vacancy_title=vacancy.slug countryfaq_country=faqs.id %}"
+                                                                        href="{% url 'vacancies' cid=vacancy.country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}"
                                                                         data-bs-toggle="modal"
                                                                         data-bs-target="#jobDetails"
+                                                                        data-title="{{ vacancy.title }}"
+                                                                        data-description="{{ vacancy.description }}"
                                                                         ><img
-                                                                            src="/static/images/work-visa-3.png"
+                                                                            src="{{ vacancy.image.url }}"
                                                                             alt="Driver VIsa"
                                                                             class="img-fluid"
                                                                         />
@@ -606,7 +608,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
-                        Vacancy for {{ single_vacancy.title }}
+                        vacancy for
                         </h5>
                         <button 
                             type="button"
@@ -618,7 +620,7 @@
                     <div class="modal-body">
                         <div class="job-details">
                             <p>
-                                {{ single_vacancy.description }}
+                                ggg
                             </p>
                         </div>
                     </div>
@@ -716,6 +718,20 @@
                 );
             }
         </script>
+        <script>
+         const jobDetailsModal = document.getElementById('jobDetails');
+         jobDetailsModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const title = button.getAttribute('data-title');
+            const description = button.getAttribute('data-description');
+
+            const modalTitle = jobDetailsModal.querySelector('.modal-title');
+            const modalBody = jobDetailsModal.querySelector('.modal-body p');
+
+            modalTitle.textContent = Vacancy for ${title};
+            modalBody.textContent = description;
+         });
+      </script>
         
         <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

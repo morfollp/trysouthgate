@@ -23,11 +23,11 @@ def about(request):
     return render(request, 'pages/aboutus.html', context)
 
 
-def servicedetails(request, service_title, servicefaq_service):
+def servicedetails(request, service_id, sfaqid):
     services= Service.objects.all()
-    single_services= Service.objects.get(slug=service_title)
-    faqs= ServiceFaq.objects.get(id=servicefaq_service)
-    servicefaqs= ServiceFaq.objects.filter(service__slug=service_title)
+    single_services= Service.objects.get(sid=service_id)
+    faqs= ServiceFaq.objects.get(sfaqid=sfaqid)
+    servicefaqs= ServiceFaq.objects.filter(service__sid=service_id)
     context={
     'single_services': single_services,
     'services': services,
@@ -36,23 +36,22 @@ def servicedetails(request, service_title, servicefaq_service):
     }
     return render(request, 'pages/servicedetails.html', context)
 
-def jobvacancies(request, country_name, country_id, vacancy_title, countryfaq_country):
+def jobvacancies(request, cid, vacancy_id, cfaqid):
     countries= Country.objects.all()
-    single_country= Country.objects.get(slug=country_name)
+    single_country= Country.objects.get(cid=cid)
     
-    vacancies= Vacancy.objects.get(id= country_id)
-    country_vacancies= Vacancy.objects.filter(country__slug= country_name)
-    single_vacancy= Vacancy.objects.get(slug= vacancy_title)
+    vacancies= Vacancy.objects.get(vid=vacancy_id)
+    country_vacancies= Vacancy.objects.filter(country__cid= cid)
 
-    faqs= CountryFaq.objects.get(id=countryfaq_country)
-    countryfaqs= CountryFaq.objects.filter(country__slug=country_name)
+
+    faqs= CountryFaq.objects.get(cfaqid=cfaqid)
+    countryfaqs= CountryFaq.objects.filter(country__cid=cid)
 
 
 
     context={
     'countries':countries,
     'single_country':single_country,
-    'single_vacancy':single_vacancy,
     'vacancies':vacancies,
     'country_vacancies': country_vacancies,
     'faqs':faqs,
