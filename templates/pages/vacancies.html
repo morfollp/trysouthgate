@@ -293,7 +293,7 @@
                                                                 >
                                                                 
                                                                     <a
-                                                                        href="{% url 'vacancies' cid=vacancy.country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}"
+                                                                        href="{{ vacancy_url }}"
                                                                         data-bs-toggle="modal"
                                                                         data-bs-target="#jobDetails"
                                                                         data-title="{{ vacancy.title }}"
