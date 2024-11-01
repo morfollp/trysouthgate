@@ -56,7 +56,7 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
     'country_vacancies': country_vacancies,
     'faqs':faqs,
     'countryfaqs': countryfaqs,
-   'vacancy_url': reverse('vacancies', args=[country.cid, vacancies.vid, faqs.cfaqid]),
+   'vacancy_url': reverse('vacancies', args=[vacancies.country.cid, vacancies.vid, faqs.cfaqid]),
     
 
     }
