@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from pages.models import *
-
+from django.urls import reverse
 def index(request):
     countries= Country.objects.all()
     services= Service.objects.all()[:3]
@@ -56,6 +56,7 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
     'country_vacancies': country_vacancies,
     'faqs':faqs,
     'countryfaqs': countryfaqs,
+   'vacancy_url': reverse('vacancies', args=[country.cid, vacancies.vid, faqs.cfaqid]),
     
 
     }
