@@ -145,7 +145,7 @@
                            {% endfor %}
                         </div>
                         <!-- --content------- -->
-                        <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-content w-100" id="v-pills-tabContent">
                            <div
                               class="tab-pane fade show active"
                               id="v-pills-home"
@@ -642,20 +642,6 @@
             );
          }
       </script>
-      <!-- <script>
-         const jobDetailsModal = document.getElementById('jobDetails');
-         jobDetailsModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const title = button.getAttribute('data-title');
-            const description = button.getAttribute('data-description');
-
-            const modalTitle = jobDetailsModal.querySelector('.modal-title');
-            const modalBody = jobDetailsModal.querySelector('.modal-body p');
-
-            modalTitle.textContent = Vacancy for ${title};
-            modalBody.textContent = description;
-         });
-      </script> -->
       <script>
          // Listen for the modal opening event
          const jobDetailsModal = document.getElementById('jobDetails');
