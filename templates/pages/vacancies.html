@@ -642,26 +642,22 @@
             );
          }
       </script>
-      <script>
-         // Listen for the modal opening event
+      <!-- <script>
          const jobDetailsModal = document.getElementById('jobDetails');
 
          jobDetailsModal.addEventListener('show.bs.modal', function (event) {
-            // Get the button that triggered the modal
             const button = event.relatedTarget;
 
-            // Extract the data attributes
             const title = button.getAttribute('data-title');
             const description = button.getAttribute('data-description');
 
-            // Update the modal's content
             const modalTitle = jobDetailsModal.querySelector('.modal-title');
             const modalBody = jobDetailsModal.querySelector('.modal-body p');
 
             modalTitle.textContent = `Vacancy for ${title}`;
             modalBody.textContent = description;
          });
-      </script>
+      </script> -->
 
       <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
