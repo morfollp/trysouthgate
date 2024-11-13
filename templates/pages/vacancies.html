@@ -1,197 +1,188 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
-        />
-        <link
-            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-        <title>Southgate Immigration</title>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg fixed-top py-4">
-                <div class="container">
-                    <a class="navbar-brand" href="{% url 'index' %}">Logo</a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"
-                            ><i class="bi bi-bar-chart"></i
-                        ></span>
-                    </button>
-                    <div
-                        class="collapse navbar-collapse"
-                        id="navbarSupportedContent"
-                    >
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link active"
-                                    aria-current="page"
-                                    href="{% url 'index' %}"
-                                    >Home</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'aboutus' %}"
-                                    >About Us</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'servicedetails' service_id='1' sfaqid='1' %}"
-                                    >Services</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'vacancies' cid='1' vacancy_id='1' cfaqid=1 %}"
-                                    >Vacancies</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contactus.html"
-                                    >Contact Us</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <section
-                class="inner-banner flex-center"
-                style="background: url(/static/images/banner-service.png)"
-            >
-                <div class="inner-title">
-                    <h1>Careers</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item">
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li
-                                class="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                Vacancies
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
-            </section>
-        </header>
-        <section class="services py-5">
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+      />
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      />
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+         crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+      <title>Southgate Immigration</title>
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-expand-lg fixed-top py-4">
             <div class="container">
-                <div class="row py-5">
-                    <div class="col-lg-12">
-                        <div class="service-tab">
-                            <div class="d-flex align-items-start mbl-column">
-                                <div
-                                    class="nav flex-column nav-pills me-5"
-                                    id="v-pills-tab"
-                                    role="tablist"
-                                    aria-orientation="vertical"
-                                >
-                                    <h3 class="fw-bold mb-4">
-                                        Countries we Support
+               <a class="navbar-brand" href="{% url 'index' %}">Logo</a>
+               <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+               >
+                  <span class="navbar-toggler-icon"
+                     ><i class="bi bi-bar-chart"></i
+                  ></span>
+               </button>
+               <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent"
+               >
+                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a
+                           class="nav-link active"
+                           aria-current="page"
+                           href="{% url 'index' %}"
+                           >Home</a
+                        >
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'aboutus' %}"
+                           >About Us</a
+                        >
+                     </li>
+                     <li class="nav-item">
+                        <a
+                           class="nav-link"
+                           href="{% url 'servicedetails' service_id='1' sfaqid='1' %}"
+                           >Services</a
+                        >
+                     </li>
+                     <li class="nav-item">
+                        <a
+                           class="nav-link"
+                           href="{% url 'vacancies' cid='1' vacancy_id='1' cfaqid=1 %}"
+                           >Vacancies</a
+                        >
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+         <section
+            class="inner-banner flex-center"
+            style="background: url(/static/images/banner-service.png)"
+         >
+            <div class="inner-title">
+               <h1>Careers</h1>
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                     <li class="breadcrumb-item">
+                        <a href="index.html">Home</a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">
+                        Vacancies
+                     </li>
+                  </ol>
+               </nav>
+            </div>
+         </section>
+      </header>
+      <section class="services py-5">
+         <div class="container">
+            <div class="row py-5">
+               <div class="col-lg-12">
+                  <div class="service-tab">
+                     <div class="d-flex align-items-start mbl-column">
+                        <div
+                           class="nav flex-column nav-pills me-5"
+                           id="v-pills-tab"
+                           role="tablist"
+                           aria-orientation="vertical"
+                        >
+                           <h3 class="fw-bold mb-4">Countries we Support</h3>
+                           {% for country in countries %}
+                           <button
+                              onclick="location.href='{% url 'vacancies' cid=vacancy.country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}'"
+                              class="nav-link active"
+                              id="v-pills-home-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#v-pills-home"
+                              type="button"
+                              role="tab"
+                              aria-controls="v-pills-home"
+                              aria-selected="true"
+                           >
+                              <span><i class="bi bi-chevron-right"></i></span>
+                              {{ country.name }}
+                           </button>
+                           {% endfor %}
+                        </div>
+                        <!-- --content------- -->
+                        <div class="tab-content" id="v-pills-tabContent">
+                           <div
+                              class="tab-pane fade show active"
+                              id="v-pills-home"
+                              role="tabpanel"
+                              aria-labelledby="v-pills-home-tab"
+                              tabindex="0"
+                           >
+                              <div class="content-section">
+                                 <div class="banner">
+                                    <img
+                                       src="{{ single_country.country_image.url }}"
+                                       alt="Worker Visa"
+                                       class="img-fluid"
+                                    />
+                                    <h3 class="title">
+                                       {{ single_country.name }}
                                     </h3>
-                                    {% for country in countries %}
-                                    <button onclick="location.href='{% url 'vacancies' cid=country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}'"
-                                        class="nav-link active"
-                                        id="v-pills-home-tab"
-                                        data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-home"
-                                        type="button"
-                                        role="tab"
-                                        aria-controls="v-pills-home"
-                                        aria-selected="true"
-                                    >
-                                        <span
-                                            ><i class="bi bi-chevron-right"></i
-                                        ></span>
-                                        {{ country.name }}
-                                    </button>
-                                    {% endfor %}
-                                </div>
-                                <!-- --content------- -->
-                                <div
-                                    class="tab-content"
-                                    id="v-pills-tabContent"
-                                >
-                                    <div
-                                        class="tab-pane fade show active"
-                                        id="v-pills-home"
-                                        role="tabpanel"
-                                        aria-labelledby="v-pills-home-tab"
-                                        tabindex="0"
-                                    >
-                                        <div class="content-section">
-                                            <div class="banner">
-                                                <img
-                                                    src="{{ single_country.country_image.url }}"
-                                                    alt="Worker Visa"
-                                                    class="img-fluid"
-                                                />
-                                                <h3 class="title">{{ single_country.name }}</h3>
-                                            </div>
-                                            <div class="title-head py-4">
-                                                <h1 class="mainhead">
-                                                    Country Overview
-                                                </h1>
-                                            </div>
-                                            <div class="content-text">
-                                                <div class="country-overview">
-                                                    <p>
-                                                        {{ single_country.country_description }}
-                                                    </p>
-                                                </div>
-                                                <div class="quick-facts py-4">
-                                                    <h3 class="fw-bold mb-4">
-                                                        Quick Facts
-                                                    </h3>
-                                                    <ul
-                                                        class="list-unstyled facts-list"
-                                                    >
-                                                        <li>{{ single_country.country_description }}</li>
-                                                       <!--  <li>
+                                 </div>
+                                 <div class="title-head py-4">
+                                    <h1 class="mainhead">Country Overview</h1>
+                                 </div>
+                                 <div class="content-text">
+                                    <div class="country-overview">
+                                       <p>
+                                          {{ single_country.country_description
+                                          }}
+                                       </p>
+                                    </div>
+                                    <div class="quick-facts py-4">
+                                       <h3 class="fw-bold mb-4">Quick Facts</h3>
+                                       <ul class="list-unstyled facts-list">
+                                          <li>
+                                             {{
+                                             single_country.country_description
+                                             }}
+                                          </li>
+                                          <!--  <li>
                                                             Area: Approximately
                                                             83,879 square
                                                             kilometers (32,383
@@ -258,467 +249,400 @@
                                                             United Nations and
                                                             the European Union.
                                                         </li> -->
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-listing">
-                                                <div class="title-head py-4">
-                                                   
-                                                    <h1 class="mainhead mb-4">
-
-                                                        Jobs listed
-                                                        
-                                                    </h1>
-                                                    
-                                                </div>
-                                    
-                                                <div
-                                                    class="carrer-list-wrapper"
-                                                >
-                                                    <div
-                                                        class="row pb-5 jobList"
-                                                    >
-                                                     {% for vacancy in country_vacancies %}
-                                                        <div
-                                                            class="col-lg-4 col-md-6"
-                                                        >
-                                                       
-                                                            <div
-                                                                class="job-list-item"
-                                                            >
-                                                             
-                                                                <div
-                                                                    class="career-box"
-
-                                                                >
-                                                                
-                                                                    <a
-                                                                        href="{% url 'vacancies' cid=vacancy.country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#jobDetails"
-                                                                        data-title="{{ vacancy.title }}"
-                                                                        data-description="{{ vacancy.description }}"
-                                                                        ><img
-                                                                            src="{{ vacancy.image.url }}"
-                                                                            alt="Driver VIsa"
-                                                                            class="img-fluid"
-                                                                        />
-                                                                        <div
-                                                                            class="job-caption"
-                                                                        >
-                                                                            <h2>
-                                                                                {{ vacancy.title }}
-                                                                            </h2>
-                                                                        </div></a
-                                                                    >
-                                                                    
-                                                                </div>
-
-                                                            </div>
-                                                           
-                                                        </div>
-                                                         {% endfor %}
-                                                        <div class="col-12">
-                                                            <span
-                                                                class="overflow"
-                                                                data-state="visible"
-                                                                aria-hidden="true"
-                                                            ></span>
-                                                        </div>
-                                                       
-                                                    </div>
-                                                    <div
-                                                        class="col-12 text-center py-5"
-                                                    >
-                                                        <a
-                                                            id="showMore"
-                                                            href="#"
-                                                            class="btn btn-theme toggle"
-                                                            data-state="more"
-                                                            >View more</a
-                                                        >
-                                                    </div>
-                                                </div>
-                                             
-                                            </div>
-
-                                            <div class="faq-session">
-                                                <div class="title-head py-4">
-                                                    <h1 class="mainhead">
-                                                        Frequently Asked
-                                                        Question
-                                                    </h1>
-                                                </div>
-                                                <!-- accordion -->
-                                                <div
-                                                    class="accordion mt-4 mb-5"
-                                                    id="accordionExample"
-                                                >
-                                                    <div class="accordion-item">
-                                                        {% for faq in countryfaqs %}
-                                                        <h2
-                                                            class="accordion-header"
-                                                        >
-                                                            <button
-                                                                class="accordion-button"
-                                                                type="button"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseOne-1"
-                                                                aria-expanded="true"
-                                                                aria-controls="collapseOne-1"
-                                                            >
-                                                                {{ faq.question }}
-                                            
-                                                            </button>
-                                                        </h2>
-                                                        <div
-                                                            id="collapseOne-1"
-                                                            class="accordion-collapse collapse show"
-                                                            data-bs-parent="#accordionExample"
-                                                        >
-                                                            <div
-                                                                class="accordion-body"
-                                                            >
-                                                                <div
-                                                                    class="row py-2"
-                                                                >
-                                                                    <p>
-                                                                       {{ faq.answer }}
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        {% endfor %}
-                                                    </div>
-                                                
-                                                </div>
-                                            </div>
-                                        </div>
+                                       </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- footer -->
-        <footer class="footer pt-5">
-            <div class="container">
-                <div class="row pt-5">
-                    <div class="col-12">
-                        <div class="footer-info-box shadow-lg">
-                            <div class="col-lg-12">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <div class="infolist d-flex">
-                                            <div class="icon flex-center">
-                                                <i class="bi bi-telephone"></i>
-                                            </div>
-                                            <div class="info-details">
-                                                <p class="fw-bold text-white">
-                                                    Call Us Anytime
-                                                </p>
-                                                <p class="lead text-white">
-                                                    +91 79075 96575
-                                                </p>
-                                            </div>
-                                        </div>
+                                 </div>
+                                 <div class="job-listing">
+                                    <div class="title-head py-4">
+                                       <h1 class="mainhead mb-4">
+                                          Jobs listed
+                                       </h1>
                                     </div>
-                                    <div class="col-lg-4">
-                                        <div class="infolist d-flex">
-                                            <div class="icon flex-center">
-                                                <i class="bi bi-envelope"></i>
-                                            </div>
-                                            <div class="info-details">
-                                                <p class="fw-bold text-white">
-                                                    Send Mail
-                                                </p>
-                                                <p class="lead text-white">
-                                                    <a
-                                                        class="text-white"
-                                                        href="mailto:info@southgateimmigration.com"
-                                                        >info@southgateimmigration.com</a
-                                                    >
-                                                </p>
-                                            </div>
-                                        </div>
+
+                                    <div class="carrer-list-wrapper">
+                                       <div class="row pb-5 jobList">
+                                          {% for vacancy in country_vacancies %}
+                                          <div class="col-lg-4 col-md-6">
+                                             <div class="job-list-item">
+                                                <div class="career-box">
+                                                   <a
+                                                      href="{% url 'vacancies' cid=vacancy.country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}"
+                                                      data-bs-toggle="modal"
+                                                      data-bs-target="#jobDetails"
+                                                      data-title="{{ vacancy.title }}"
+                                                      data-description="{{ vacancy.description }}"
+                                                      ><img
+                                                         src="{{ vacancy.image.url }}"
+                                                         alt="Driver VIsa"
+                                                         class="img-fluid"
+                                                      />
+                                                      <div class="job-caption">
+                                                         <h2>
+                                                            {{ vacancy.title }}
+                                                         </h2>
+                                                      </div></a
+                                                   >
+                                                </div>
+                                             </div>
+                                          </div>
+                                          {% endfor %}
+                                          <div class="col-12">
+                                             <span
+                                                class="overflow"
+                                                data-state="visible"
+                                                aria-hidden="true"
+                                             ></span>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 text-center py-5">
+                                          <a
+                                             id="showMore"
+                                             href="#"
+                                             class="btn btn-theme toggle"
+                                             data-state="more"
+                                             >View more</a
+                                          >
+                                       </div>
                                     </div>
-                                    <div class="col-lg-5">
-                                        <div class="infolist d-flex">
-                                            <div class="icon flex-center">
-                                                <i class="bi bi-geo-alt"></i>
-                                            </div>
-                                            <div class="info-details">
-                                                <p class="fw-bold text-white">
-                                                    Our Address
-                                                </p>
-                                                <p class="lead text-white">
-                                                    South Gate Immigration
-                                                    Building<br />
-                                                    No: 60/602 3rd Floor
-                                                    <br />Beejay Tower, Chittoor
-                                                    Road<br />
-                                                    Rajaji Junction, Kochi<br />
-                                                    Ernakulam, Kerala - 682035.
-                                                </p>
-                                            </div>
-                                        </div>
+                                 </div>
+
+                                 <div class="faq-session">
+                                    <div class="title-head py-4">
+                                       <h1 class="mainhead">
+                                          Frequently Asked Question
+                                       </h1>
                                     </div>
-                                </div>
-                            </div>
+                                    <!-- accordion -->
+                                    <div
+                                       class="accordion mt-4 mb-5"
+                                       id="accordionExample"
+                                    >
+                                       <div class="accordion-item">
+                                          {% for faq in countryfaqs %}
+                                          <h2 class="accordion-header">
+                                             <button
+                                                class="accordion-button"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne-1"
+                                                aria-expanded="true"
+                                                aria-controls="collapseOne-1"
+                                             >
+                                                {{ faq.question }}
+                                             </button>
+                                          </h2>
+                                          <div
+                                             id="collapseOne-1"
+                                             class="accordion-collapse collapse show"
+                                             data-bs-parent="#accordionExample"
+                                          >
+                                             <div class="accordion-body">
+                                                <div class="row py-2">
+                                                   <p>{{ faq.answer }}</p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          {% endfor %}
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row footer-inner pb-5">
-                    <div class="col-lg-4 pe-lg-5">
-                        <div class="footer-about pt-5">
-                            <p class="text-white">
-                                We are dedicated to making your immigration
-                                journey seamless and successful. For
-                                personalized support or inquiries, feel free to
-                                contact us. Your future awaits. Let’s embark on
-                                this journey together!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="footer-menu pt-5">
-                            <h5 class="mb-3">Quick Links</h5>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="aboutus.html">About Us</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="services.html">Services</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="career.html">Careers</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="contactus.html">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-6">
-                        <div class="footer-menu pt-5">
-                            <h5 class="mb-3">Services</h5>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="aboutus.html">About Us</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="services.html">Services</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="career.html">Vacancies</a>
-                                </li>
-                                <li>
-                                    <span
-                                        ><i
-                                            class="bi bi-chevron-double-right"
-                                        ></i></span
-                                    ><a href="contactus.html">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="footer-menu social-list pt-5">
-                            <h5 class="mb-3">Follow Us</h5>
-                            <span class="flex-center"
-                                ><a href="#"><i class="bi bi-facebook"></i></a
-                            ></span>
-                            <span class="flex-center"
-                                ><a href="#"><i class="bi bi-instagram"></i></a
-                            ></span>
-                            <span class="flex-center"
-                                ><a href="#"><i class="bi bi-twitter-x"></i></a
-                            ></span>
-                            <span class="flex-center"
-                                ><a href="#"><i class="bi bi-linkedin"></i></a
-                            ></span>
-                            <span class="flex-center"
-                                ><a href="#"><i class="bi bi-youtube"></i></a
-                            ></span>
-                        </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="container">
-                <div class="col-12">
-                    <div class="copy-right py-3">
-                        <small>&copy; Copyrights reserved, 2024</small>
-                    </div>
-                </div>
-            </div>
-        </footer>
-                <!-- Modal -->
-        <div
-            class="modal fade"
-            id="jobDetails"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                        Vacancy for {{ single_vacancy.title }}
-                        </h5>
-                        <button 
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="job-details">
-                            <p>
-                                {{ single_vacancy.description }}
-                            </p>
+         </div>
+      </section>
+      <!-- footer -->
+      <footer class="footer pt-5">
+         <div class="container">
+            <div class="row pt-5">
+               <div class="col-12">
+                  <div class="footer-info-box shadow-lg">
+                     <div class="col-lg-12">
+                        <div class="row">
+                           <div class="col-lg-3">
+                              <div class="infolist d-flex">
+                                 <div class="icon flex-center">
+                                    <i class="bi bi-telephone"></i>
+                                 </div>
+                                 <div class="info-details">
+                                    <p class="fw-bold text-white">
+                                       Call Us Anytime
+                                    </p>
+                                    <p class="lead text-white">
+                                       +91 79075 96575
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4">
+                              <div class="infolist d-flex">
+                                 <div class="icon flex-center">
+                                    <i class="bi bi-envelope"></i>
+                                 </div>
+                                 <div class="info-details">
+                                    <p class="fw-bold text-white">Send Mail</p>
+                                    <p class="lead text-white">
+                                       <a
+                                          class="text-white"
+                                          href="mailto:info@southgateimmigration.com"
+                                          >info@southgateimmigration.com</a
+                                       >
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-5">
+                              <div class="infolist d-flex">
+                                 <div class="icon flex-center">
+                                    <i class="bi bi-geo-alt"></i>
+                                 </div>
+                                 <div class="info-details">
+                                    <p class="fw-bold text-white">
+                                       Our Address
+                                    </p>
+                                    <p class="lead text-white">
+                                       South Gate Immigration Building<br />
+                                       No: 60/602 3rd Floor
+                                       <br />Beejay Tower, Chittoor Road<br />
+                                       Rajaji Junction, Kochi<br />
+                                       Ernakulam, Kerala - 682035.
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-theme"
-                            data-bs-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-        <!-- whatsapp -->
-        <div class="whtsapp-icon">
-            <a
-                class="text-white flex-center h-100"
-                href="https://wa.me/7907596575
+            <div class="row footer-inner pb-5">
+               <div class="col-lg-4 pe-lg-5">
+                  <div class="footer-about pt-5">
+                     <p class="text-white">
+                        We are dedicated to making your immigration journey
+                        seamless and successful. For personalized support or
+                        inquiries, feel free to contact us. Your future awaits.
+                        Let’s embark on this journey together!
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-6">
+                  <div class="footer-menu pt-5">
+                     <h5 class="mb-3">Quick Links</h5>
+                     <ul class="list-unstyled">
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="index.html">Home</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="aboutus.html">About Us</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="services.html">Services</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="career.html">Careers</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="contactus.html">Contact Us</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-6">
+                  <div class="footer-menu pt-5">
+                     <h5 class="mb-3">Services</h5>
+                     <ul class="list-unstyled">
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="index.html">Home</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="aboutus.html">About Us</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="services.html">Services</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="career.html">Vacancies</a>
+                        </li>
+                        <li>
+                           <span
+                              ><i class="bi bi-chevron-double-right"></i></span
+                           ><a href="contactus.html">Contact Us</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <div class="footer-menu social-list pt-5">
+                     <h5 class="mb-3">Follow Us</h5>
+                     <span class="flex-center"
+                        ><a href="#"><i class="bi bi-facebook"></i></a
+                     ></span>
+                     <span class="flex-center"
+                        ><a href="#"><i class="bi bi-instagram"></i></a
+                     ></span>
+                     <span class="flex-center"
+                        ><a href="#"><i class="bi bi-twitter-x"></i></a
+                     ></span>
+                     <span class="flex-center"
+                        ><a href="#"><i class="bi bi-linkedin"></i></a
+                     ></span>
+                     <span class="flex-center"
+                        ><a href="#"><i class="bi bi-youtube"></i></a
+                     ></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-12">
+               <div class="copy-right py-3">
+                  <small>&copy; Copyrights reserved, 2024</small>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Modal -->
+      <div
+         class="modal fade"
+         id="jobDetails"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true"
+      >
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                     Vacancy for {{ single_vacancy.title }}
+                  </h5>
+                  <button
+                     type="button"
+                     class="btn-close"
+                     data-bs-dismiss="modal"
+                     aria-label="Close"
+                  ></button>
+               </div>
+               <div class="modal-body">
+                  <div class="job-details">
+                     <p>{{ single_vacancy.description }}</p>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button
+                     type="button"
+                     class="btn btn-theme"
+                     data-bs-dismiss="modal"
+                  >
+                     Close
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- whatsapp -->
+      <div class="whtsapp-icon">
+         <a
+            class="text-white flex-center h-100"
+            href="https://wa.me/7907596575
 
             "
-                target="_blank"
-                class="whatsapp-float"
-                ><i class="bi bi-whatsapp"></i>
-            </a>
-        </div>
-        <!-- modal -->
-        <div
-            class="modal fade video-modal"
-            id="videoModal"
-            tabindex="-1"
-            aria-labelledby="videoModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        >
-                            <i class="bi bi-x"></i>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Video element -->
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                class="embed-responsive-item"
-                                src="video/visa.mp4"
-                                allowscriptaccess="always"
-                                allow="autoplay"
-                            ></iframe>
-                        </div>
-                    </div>
-                </div>
+            target="_blank"
+            class="whatsapp-float"
+            ><i class="bi bi-whatsapp"></i>
+         </a>
+      </div>
+      <!-- modal -->
+      <div
+         class="modal fade video-modal"
+         id="videoModal"
+         tabindex="-1"
+         aria-labelledby="videoModalLabel"
+         aria-hidden="true"
+      >
+         <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button
+                     type="button"
+                     class="btn-close"
+                     data-bs-dismiss="modal"
+                     aria-label="Close"
+                  >
+                     <i class="bi bi-x"></i>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <!-- Video element -->
+                  <div class="ratio ratio-16x9">
+                     <iframe
+                        class="embed-responsive-item"
+                        src="video/visa.mp4"
+                        allowscriptaccess="always"
+                        allow="autoplay"
+                     ></iframe>
+                  </div>
+               </div>
             </div>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"
-        ></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-        <script>
-            const txt = document.querySelector('.jobList');
-            const txtInitialHeight = txt.clientHeight;
-            const overflow = document.querySelector('.overflow');
-            const btn = document.querySelector('.toggle');
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+         crossorigin="anonymous"
+      ></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="{% static 'js/main.js' %}"></script>
+      <script>
+         const txt = document.querySelector('.jobList');
+         const txtInitialHeight = txt.clientHeight;
+         const overflow = document.querySelector('.overflow');
+         const btn = document.querySelector('.toggle');
 
-            btn.addEventListener('click', initToggle);
+         btn.addEventListener('click', initToggle);
 
-            function initToggle(e) {
-                txt.style.maxHeight =
-                    e.target.dataset.state === 'more'
-                        ? `${txt.scrollHeight}px`
-                        : `${txtInitialHeight}px`;
-                e.target.setAttribute(
-                    'data-state',
-                    e.target.dataset.state === 'more' ? 'less' : 'more'
-                );
-                e.target.innerHTML =
-                    e.target.dataset.state === 'more'
-                        ? 'View more'
-                        : 'View less';
-                overflow.setAttribute(
-                    'data-state',
-                    e.target.dataset.state === 'more' ? 'visible' : 'hidden'
-                );
-            }
-        </script>
-        <script>
+         function initToggle(e) {
+            txt.style.maxHeight =
+               e.target.dataset.state === 'more'
+                  ? `${txt.scrollHeight}px`
+                  : `${txtInitialHeight}px`;
+            e.target.setAttribute(
+               'data-state',
+               e.target.dataset.state === 'more' ? 'less' : 'more'
+            );
+            e.target.innerHTML =
+               e.target.dataset.state === 'more' ? 'View more' : 'View less';
+            overflow.setAttribute(
+               'data-state',
+               e.target.dataset.state === 'more' ? 'visible' : 'hidden'
+            );
+         }
+      </script>
+      <script>
          const jobDetailsModal = document.getElementById('jobDetails');
          jobDetailsModal.addEventListener('show.bs.modal', function (event) {
             const button = event.relatedTarget;
@@ -728,13 +652,14 @@
             const modalTitle = jobDetailsModal.querySelector('.modal-title');
             const modalBody = jobDetailsModal.querySelector('.modal-body p');
 
-            modalTitle.textContent = Vacancy for ${title};
+            modalTitle.textContent = `Vacancy for ${title}`;
             modalBody.textContent = description;
          });
       </script>
-        
-        <!--
+
+      <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    --></body>
+    -->
+   </body>
 </html>
