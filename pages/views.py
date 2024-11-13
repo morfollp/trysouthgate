@@ -41,8 +41,7 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
     single_country= Country.objects.get(cid=cid)
     
     vacancies= Vacancy.objects.get(vid=vacancy_id)
-    country_vacancies= Vacancy.objects.filter(country__cid= cid)
-
+    country_vacancies= Vacancy.objects.filter(country__cid= cid) 
 
     faqs= CountryFaq.objects.get(cfaqid=cfaqid)
     countryfaqs= CountryFaq.objects.filter(country__cid=cid)
@@ -62,6 +61,11 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
     }
 
     return render(request, 'pages/vacancies.html', context)
+
+
+def contact(request):
+    context={}
+    return render(request, 'pages/contact.html', context)
 
 
 
