@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from pages.models import *
 from django.urls import reverse
+from django.http import HttpResponse
+
+
 def index(request):
     countries= Country.objects.all()
     services= Service.objects.all()[:3]
@@ -63,9 +66,23 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
     return render(request, 'pages/vacancies.html', context)
 
 
-def contact(request):
-    context={}
-    return render(request, 'pages/contact.html', context)
+# def contact(request):
+#     if method == "POST":
+#         contact=Contact()
+#         name= request.POST.get('name')
+#         email= request.POST.get('email')
+#         phone= request.POST.get('phone')
+#         subject= request.POST.get('subject')
+#         description= request.POST.get('description')
+
+#         contact.name=name
+#         contact.email=email
+#         contact.phone=phone
+#         contact.subject=subject
+#         contact.description=description
+#         contact.save()
+#         return HttpResponse('<h1>Thanks for contacting us</h1>')
+#     return render(request, 'pages/contact.html', context)
 
 
 

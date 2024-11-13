@@ -34,12 +34,13 @@
                                 <h1 class="mainhead">Feel free to write</h1>
                             </div>
                             <div class="form-details">
-                                <form action="">
+                                <form method="post" class= "was-validated">
+                                	{% csrf_token %}
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-4">
                                                 <div class="form-group">
-                                                    <input
+                                                    <input name= 'name'
                                                         type="text"
                                                         class="form-control"
                                                         id="name"
@@ -52,7 +53,7 @@
                                         <div class="col-lg-6">
                                             <div class="mb-4">
                                                 <div class="form-group">
-                                                    <input
+                                                    <input name='email'
                                                         type="text"
                                                         class="form-control"
                                                         id="name"
@@ -65,7 +66,7 @@
                                         <div class="col-lg-6">
                                             <div class="mb-4">
                                                 <div class="form-group">
-                                                    <input
+                                                    <input name='phone'
                                                         type="text"
                                                         class="form-control"
                                                         id="name"
@@ -78,7 +79,7 @@
                                         <div class="col-lg-6">
                                             <div class="mb-4">
                                                 <div class="form-group">
-                                                    <input
+                                                    <input name='subject'
                                                         type="text"
                                                         class="form-control"
                                                         id="name"
@@ -91,7 +92,7 @@
                                         <div class="col-lg-12">
                                             <div class="mb-4">
                                                 <div class="form-group">
-                                                    <textarea
+                                                    <textarea name='description'
                                                         class="form-control"
                                                         rows="5"
                                                         placeholder="Enter Comment"
@@ -137,7 +138,7 @@
                                     </div>
                                     <div class="col pe-lg-5">
                                         <h5 class="mb-3">Call</h5>
-                                        <p>+91 00212 12121</p>
+                                        <p>+91 79075 96575</p>
                                     </div>
                                 </div>
                                 <div class="icon-details d-flex mt-5">
@@ -146,7 +147,7 @@
                                     </div>
                                     <div class="col">
                                         <h5 class="mb-3">Email</h5>
-                                        <p>info@support.com</p>
+                                        <p>info@southgateimmigration.com</p>
                                     </div>
                                 </div>
                                 <div class="icon-details d-flex mt-5">
@@ -156,9 +157,12 @@
                                     <div class="col">
                                         <h5 class="mb-3">Address</h5>
                                         <p>
-                                            Lorem ipsum dolor sit amet<br />
-                                            consectetur Egestas sed velit<br />
-                                            consectetur
+                                            South Gate Immigration Building<br />
+                                            No: 60/602 3rd Floor
+                                                    <br />Beejay Tower, Chittoor
+                                                    Road<br />
+                                                    Rajaji Junction, Kochi<br />
+                                                    Ernakulam, Kerala - 682035.
                                         </p>
                                     </div>
                                 </div>
