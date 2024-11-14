@@ -70,7 +70,7 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
 
 
 def contact(request):
-    if method == "POST":
+    if request.method == "POST":
         contact=Contact()
         name= request.POST.get('name')
         email= request.POST.get('email')
