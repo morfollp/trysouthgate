@@ -42,7 +42,13 @@
       <header>
          <nav class="navbar navbar-expand-lg fixed-top py-4">
             <div class="container">
-               <a class="navbar-brand" href="{% url 'index' %}">Logo</a>
+               <a class="navbar-brand" href="{% url 'index' %}">
+                  <img
+                     src="{% static 'images/logo.png' %}"
+                     alt="Logo"
+                     class="img-fluid"
+                  />
+               </a>
                <button
                   class="navbar-toggler"
                   type="button"
@@ -89,7 +95,9 @@
                         >
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact' %}"
+                           >Contact Us</a
+                        >
                      </li>
                   </ul>
                </div>
@@ -150,17 +158,15 @@
                         </div>
                         <div class="right-column-wrapper">
                            <div class="content-section">
-                              <div class="banner">
+                              <div class="banner position-relative">
                                  <img
                                     src="{{ single_country.country_image.url }}"
                                     alt="{{ single_country.name }}"
                                     class="img-fluid"
                                  />
-                                 <div>
-                                    <h3 class="title">
-                                       {{ single_country.name }}
-                                    </h3>
-                                 </div>
+                                 <h3 class="title">
+                                    {{ single_country.name }}
+                                 </h3>
                               </div>
                               <div class="title-head py-4">
                                  <h1 class="mainhead">Country Overview</h1>
@@ -171,21 +177,21 @@
                                        {{ single_country.country_description }}
                                     </p>
                                  </div>
-                                 <div class="quick-facts py-4">
+                                 <!-- <div class="quick-facts py-4">
                                     <h3 class="fw-bold mb-4">Quick Facts</h3>
-                                    <!-- <ul class="list-unstyled facts-list">
+                                    <ul class="list-unstyled facts-list">
                                        <li>
                                           {{ single_country.country_description
                                           }}
                                        </li>
-                                    </ul> -->
-                                    <!-- <div class="quick-facts-content">
+                                    </ul>
+                                    <div class="quick-facts-content">
                                        <p>
                                           {{ single_country.country_description
                                           }}
                                        </p>
-                                    </div> -->
-                                 </div>
+                                    </div>
+                                 </div> -->
                               </div>
                               <div class="job-listing">
                                  <div class="title-head py-4">
