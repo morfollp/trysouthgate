@@ -138,6 +138,10 @@
                               role="tab"
                               aria-controls="v-pills-home"
                               aria-selected="true"
+                              data-country-name="{{ country.name }}"
+                              data-country-description="{{ country.country_description }}"
+                              data-country-image="{{ country.country_image.url }}"
+                              onclick="updateCountryContent(this)"
                            >
                               <span><i class="bi bi-chevron-right"></i></span>
                               {{ country.name }}
@@ -185,73 +189,6 @@
                                              single_country.country_description
                                              }}
                                           </li>
-                                          <!--  <li>
-                                                            Area: Approximately
-                                                            83,879 square
-                                                            kilometers (32,383
-                                                            square miles)
-                                                        </li>
-                                                        <li>
-                                                            Population: Around 9
-                                                            million people
-                                                        </li>
-                                                        <li>
-                                                            Official Language:
-                                                            German
-                                                        </li>
-                                                        <li>
-                                                            Currency: Euro (€)
-                                                        </li>
-                                                        <li>
-                                                            Government: Federal
-                                                            parliamentary
-                                                            republic
-                                                        </li>
-                                                        <li>
-                                                            Regions: Composed of
-                                                            nine federal states
-                                                            (Bundesländer),
-                                                            including Tyrol,
-                                                            Vorarlberg, and
-                                                            Salzburg.
-                                                        </li>
-                                                        <li>
-                                                            Climate: Temperate,
-                                                            with continental
-                                                            influences; cold
-                                                            winters and warm
-                                                            summers.
-                                                        </li>
-                                                        <li>
-                                                            Major Industries:
-                                                            Tourism, machinery,
-                                                            automotive, and food
-                                                            processing.
-                                                        </li>
-                                                        <li>
-                                                            Cultural Heritage:
-                                                            Known for classical
-                                                            music, opera, and
-                                                            traditional Viennese
-                                                            coffee culture.
-                                                        </li>
-                                                        <li>
-                                                            Natural Features:
-                                                            The Alps dominate
-                                                            the landscape,
-                                                            offering
-                                                            opportunities for
-                                                            skiing, hiking, and
-                                                            other outdoor
-                                                            activities.
-                                                        </li>
-                                                        <li>
-                                                            UN and EU
-                                                            Membership: Austria
-                                                            is a member of the
-                                                            United Nations and
-                                                            the European Union.
-                                                        </li> -->
                                        </ul>
                                     </div>
                                  </div>
@@ -658,6 +595,21 @@
             modalTitle.textContent = `Vacancy for ${title}`;
             modalBody.textContent = description;
          });
+      </script>
+      <script>
+         function updateCountryContent(button) {
+            const countryName = button.getAttribute('data-country-name');
+            const countryDescription = button.getAttribute(
+               'data-country-description'
+            );
+            const countryImage = button.getAttribute('data-country-image');
+
+            document.querySelector('.content-section .title .title').innerText =
+               countryName;
+            document.querySelector('.country-overview p').innerText =
+               countryDescription;
+            document.querySelector('.banner img').src = countryImage;
+         }
       </script>
 
       <!--
