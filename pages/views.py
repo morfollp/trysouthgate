@@ -89,7 +89,7 @@ def contact(request):
         send_email = EmailMessage(mail_subject, name, email, phone, subject, description, to=['neerajjpgvr@gmail.com'])
         send_email.send()
         return HttpResponse('<h1>Thanks for contacting us</h1>')
-    return render(request, 'pages/contact.html', context)
+    return render(request, 'pages/contact.html', {})
 
 
 
