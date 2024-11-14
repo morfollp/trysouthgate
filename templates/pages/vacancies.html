@@ -148,10 +148,135 @@
                            </button>
                            {% endfor %}
                         </div>
-                        <p>{{ single_country.name }}</p>
-                        <p>{{ single_country.country_description }}</p>
+                        <div class="right-column-wrapper">
+                           <!-- <p>{{ single_country.name }}</p>
+                        <p>{{ single_country.country_description }}</p> -->
+                           <div class="content-section">
+                              <div class="banner">
+                                 <img
+                                    src="{{ single_country.country_image.url }}"
+                                    alt="Worker Visa"
+                                    class="img-fluid"
+                                 />
+                                 <h3 class="title">
+                                    {{ single_country.name }}
+                                 </h3>
+                              </div>
+                              <div class="title-head py-4">
+                                 <h1 class="mainhead">Country Overview</h1>
+                              </div>
+                              <div class="content-text">
+                                 <div class="country-overview">
+                                    <p>
+                                       {{ single_country.country_description }}
+                                    </p>
+                                 </div>
+                                 <div class="quick-facts py-4">
+                                    <h3 class="fw-bold mb-4">Quick Facts</h3>
+                                    <ul class="list-unstyled facts-list">
+                                       <li>
+                                          {{ single_country.country_description
+                                          }}
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="job-listing">
+                                 <div class="title-head py-4">
+                                    <h1 class="mainhead mb-4">Jobs listed</h1>
+                                 </div>
+
+                                 <div class="carrer-list-wrapper">
+                                    <div class="row pb-5 jobList">
+                                       {% for vacancy in country_vacancies %}
+                                       <div class="col-lg-4 col-md-6">
+                                          <div class="job-list-item">
+                                             <div class="career-box">
+                                                <a
+                                                   href="{% url 'vacancies' cid=vacancy.country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#jobDetails"
+                                                   data-title="{{ vacancy.title }}"
+                                                   data-description="{{ vacancy.description }}"
+                                                   ><img
+                                                      src="{{ vacancy.image.url }}"
+                                                      alt="Driver VIsa"
+                                                      class="img-fluid"
+                                                   />
+                                                   <div class="job-caption">
+                                                      <h2>
+                                                         {{ vacancy.title }}
+                                                      </h2>
+                                                   </div></a
+                                                >
+                                             </div>
+                                          </div>
+                                       </div>
+                                       {% endfor %}
+                                       <div class="col-12">
+                                          <span
+                                             class="overflow"
+                                             data-state="visible"
+                                             aria-hidden="true"
+                                          ></span>
+                                       </div>
+                                    </div>
+                                    <div class="col-12 text-center py-5">
+                                       <a
+                                          id="showMore"
+                                          href="#"
+                                          class="btn btn-theme toggle"
+                                          data-state="more"
+                                          >View more</a
+                                       >
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <div class="faq-session">
+                                 <div class="title-head py-4">
+                                    <h1 class="mainhead">
+                                       Frequently Asked Question
+                                    </h1>
+                                 </div>
+                                 <!-- accordion -->
+                                 <div
+                                    class="accordion mt-4 mb-5"
+                                    id="accordionExample"
+                                 >
+                                    <div class="accordion-item">
+                                       {% for faq in countryfaqs %}
+                                       <h2 class="accordion-header">
+                                          <button
+                                             class="accordion-button"
+                                             type="button"
+                                             data-bs-toggle="collapse"
+                                             data-bs-target="#collapseOne-1"
+                                             aria-expanded="true"
+                                             aria-controls="collapseOne-1"
+                                          >
+                                             {{ faq.question }}
+                                          </button>
+                                       </h2>
+                                       <div
+                                          id="collapseOne-1"
+                                          class="accordion-collapse collapse show"
+                                          data-bs-parent="#accordionExample"
+                                       >
+                                          <div class="accordion-body">
+                                             <div class="row py-2">
+                                                <p>{{ faq.answer }}</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       {% endfor %}
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                         <!-- --content------- -->
-                        <div class="tab-content" id="v-pills-tabContent">
+                        <!-- <div class="tab-content" id="v-pills-tabContent">
                            <div
                               class="tab-pane fade show active"
                               id="v-pills-home"
@@ -159,135 +284,9 @@
                               aria-labelledby="v-pills-home-tab"
                               tabindex="0"
                            >
-                              <div class="content-section">
-                                 <div class="banner">
-                                    <img
-                                       src="{{ single_country.country_image.url }}"
-                                       alt="Worker Visa"
-                                       class="img-fluid"
-                                    />
-                                    <h3 class="title">
-                                       {{ single_country.name }}
-                                    </h3>
-                                 </div>
-                                 <div class="title-head py-4">
-                                    <h1 class="mainhead">Country Overview</h1>
-                                 </div>
-                                 <div class="content-text">
-                                    <div class="country-overview">
-                                       <p>
-                                          {{ single_country.country_description
-                                          }}
-                                       </p>
-                                    </div>
-                                    <div class="quick-facts py-4">
-                                       <h3 class="fw-bold mb-4">Quick Facts</h3>
-                                       <ul class="list-unstyled facts-list">
-                                          <li>
-                                             {{
-                                             single_country.country_description
-                                             }}
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="job-listing">
-                                    <div class="title-head py-4">
-                                       <h1 class="mainhead mb-4">
-                                          Jobs listed
-                                       </h1>
-                                    </div>
-
-                                    <div class="carrer-list-wrapper">
-                                       <div class="row pb-5 jobList">
-                                          {% for vacancy in country_vacancies %}
-                                          <div class="col-lg-4 col-md-6">
-                                             <div class="job-list-item">
-                                                <div class="career-box">
-                                                   <a
-                                                      href="{% url 'vacancies' cid=vacancy.country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}"
-                                                      data-bs-toggle="modal"
-                                                      data-bs-target="#jobDetails"
-                                                      data-title="{{ vacancy.title }}"
-                                                      data-description="{{ vacancy.description }}"
-                                                      ><img
-                                                         src="{{ vacancy.image.url }}"
-                                                         alt="Driver VIsa"
-                                                         class="img-fluid"
-                                                      />
-                                                      <div class="job-caption">
-                                                         <h2>
-                                                            {{ vacancy.title }}
-                                                         </h2>
-                                                      </div></a
-                                                   >
-                                                </div>
-                                             </div>
-                                          </div>
-                                          {% endfor %}
-                                          <div class="col-12">
-                                             <span
-                                                class="overflow"
-                                                data-state="visible"
-                                                aria-hidden="true"
-                                             ></span>
-                                          </div>
-                                       </div>
-                                       <div class="col-12 text-center py-5">
-                                          <a
-                                             id="showMore"
-                                             href="#"
-                                             class="btn btn-theme toggle"
-                                             data-state="more"
-                                             >View more</a
-                                          >
-                                       </div>
-                                    </div>
-                                 </div>
-
-                                 <div class="faq-session">
-                                    <div class="title-head py-4">
-                                       <h1 class="mainhead">
-                                          Frequently Asked Question
-                                       </h1>
-                                    </div>
-                                    <!-- accordion -->
-                                    <div
-                                       class="accordion mt-4 mb-5"
-                                       id="accordionExample"
-                                    >
-                                       <div class="accordion-item">
-                                          {% for faq in countryfaqs %}
-                                          <h2 class="accordion-header">
-                                             <button
-                                                class="accordion-button"
-                                                type="button"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target="#collapseOne-1"
-                                                aria-expanded="true"
-                                                aria-controls="collapseOne-1"
-                                             >
-                                                {{ faq.question }}
-                                             </button>
-                                          </h2>
-                                          <div
-                                             id="collapseOne-1"
-                                             class="accordion-collapse collapse show"
-                                             data-bs-parent="#accordionExample"
-                                          >
-                                             <div class="accordion-body">
-                                                <div class="row py-2">
-                                                   <p>{{ faq.answer }}</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          {% endfor %}
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
+                             
                            </div>
-                        </div>
+                        </div> -->
                      </div>
                   </div>
                </div>
