@@ -87,7 +87,7 @@ def contact(request):
         # Send contact to info@southgateimmigration
         mail_subject = 'Someone Messaged You!'
         message= name+'has messaged you. Email:'+email+'Phone:'+phone+'Subject:'+subject+'Message:'+ description
-        send_email = EmailMessage(mail_subject, message, to=['neerajjpgvr@gmail.com'], fail_silently=False)
+        send_email = EmailMessage(mail_subject, message, to=['neerajjpgvr@gmail.com'])
         send_email.send()
         return HttpResponse('<h1>Thanks for contacting us</h1>')
     return render(request, 'pages/contact.html', {})
