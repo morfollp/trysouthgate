@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from pages.models import *
 from django.urls import reverse
 from django.http import HttpResponse
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+
 
 
 def index(request):
@@ -66,23 +69,27 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
     return render(request, 'pages/vacancies.html', context)
 
 
-# def contact(request):
-#     if method == "POST":
-#         contact=Contact()
-#         name= request.POST.get('name')
-#         email= request.POST.get('email')
-#         phone= request.POST.get('phone')
-#         subject= request.POST.get('subject')
-#         description= request.POST.get('description')
+def contact(request):
+    if method == "POST":
+        contact=Contact()
+        name= request.POST.get('name')
+        email= request.POST.get('email')
+        phone= request.POST.get('phone')
+        subject= request.POST.get('subject')
+        description= request.POST.get('description')
 
-#         contact.name=name
-#         contact.email=email
-#         contact.phone=phone
-#         contact.subject=subject
-#         contact.description=description
-#         contact.save()
-#         return HttpResponse('<h1>Thanks for contacting us</h1>')
-#     return render(request, 'pages/contact.html', context)
+        contact.name=name
+        contact.email=email
+        contact.phone=phone
+        contact.subject=subject
+        contact.description=description
+        contact.save()
+        # Send contact to info@southgateimmigration
+        mail_subject = 'Someone Messaged You!'
+        send_email = EmailMessage(mail_subject, name, email, phone, subject, description, to=['neerajjpgvr@gmail.com'])
+        send_email.send()
+        return HttpResponse('<h1>Thanks for contacting us</h1>')
+    return render(request, 'pages/contact.html', context)
 
 
 
