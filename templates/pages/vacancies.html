@@ -138,9 +138,9 @@
                               role="tab"
                               aria-controls="v-pills-home"
                               aria-selected="true"
-                              data-country-name="{{ country.name }}"
-                              data-country-description="{{ country.country_description }}"
-                              data-country-image="{{ country.country_image.url }}"
+                              data-country-name="{{ single_country.name }}"
+                              data-country-description="{{ single_country.country_description }}"
+                              data-country-image="{{ single_country.country_image.url }}"
                               onclick="updateCountryContent(this)"
                            >
                               <span><i class="bi bi-chevron-right"></i></span>
@@ -149,8 +149,6 @@
                            {% endfor %}
                         </div>
 
-                        <p>{{ single_country.name }}</p>
-                        <p>{{ single_country.country_description }}</p>
                         <!-- --content------- -->
                         <div class="tab-content" id="v-pills-tabContent">
                            <div
