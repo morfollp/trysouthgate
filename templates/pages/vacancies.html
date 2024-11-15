@@ -220,22 +220,6 @@
                                     </div>
                                  </div> -->
                               </div>
-                                 <!-- <div class="quick-facts py-4">
-                                    <h3 class="fw-bold mb-4">Quick Facts</h3>
-                                    <ul class="list-unstyled facts-list">
-                                       <li>
-                                          {{ single_country.country_description
-                                          }}
-                                       </li>
-                                    </ul>
-                                    <div class="quick-facts-content">
-                                       <p>
-                                          {{ single_country.country_description
-                                          }}
-                                       </p>
-                                    </div>
-                                 </div> -->
-                              </div>
                               <div class="job-listing">
                                  <div class="title-head py-4">
                                     <h1 class="mainhead mb-4">Jobs listed</h1>
@@ -253,6 +237,7 @@
                                                    data-bs-target="#jobDetails"
                                                    data-title="{{ vacancy.title }}"
                                                    data-description="{{ vacancy.description }}"
+                                                   data-salary="{{ vacancy.salary }}"
                                                    ><img
                                                       src="{{ vacancy.image.url }}"
                                                       alt="Driver VIsa"
@@ -450,7 +435,7 @@
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="{% url 'index' %}">Contact Us</a>
+                           ><a href="{% url 'contact' %}">Contact Us</a>
                         </li>
                      </ul>
                   </div>
@@ -467,7 +452,7 @@
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="">About Us</a>
+                           ><a href="{% url 'aboutus' %}">About Us</a>
                         </li>
                         <li>
                            <span
@@ -541,6 +526,7 @@
                <div class="modal-body">
                   <div class="job-details">
                      <p>{{ vacancy.description }}</p>
+                     <h4>Salary: {{ vacancy.salary }}</h4>
                   </div>
                </div>
                <div class="modal-footer">
@@ -641,12 +627,15 @@
             const button = event.relatedTarget;
             const title = button.getAttribute('data-title');
             const description = button.getAttribute('data-description');
+            const salary = button.getAttribute('data-salary');
 
             const modalTitle = jobDetailsModal.querySelector('.modal-title');
             const modalBody = jobDetailsModal.querySelector('.modal-body p');
+            const modalSalary = jobDetailsModal.querySelector('.modal-body h4');
 
             modalTitle.textContent = `Vacancy for ${title}`;
             modalBody.textContent = description;
+            modalSalary.textContent = `Salary: ${salary}`;
          });
       </script>
       <script>
