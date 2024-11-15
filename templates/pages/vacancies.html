@@ -112,7 +112,7 @@
                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-center">
                      <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
+                        <a href="{% url 'index' %}">Home</a>
                      </li>
                      <li class="breadcrumb-item active" aria-current="page">
                         Vacancies
@@ -177,6 +177,49 @@
                                        {{ single_country.country_description }}
                                     </p>
                                  </div>
+                                 <div class="title-head py-4">
+                                 <h1 class="mainhead">Quick Facts</h1>
+                              </div>
+                              <div class="content-text">
+                                 <div class="country-overview">
+                                    <li>
+                                       {{ single_country.capital }}
+                                    </li>
+                                    <li>
+                                       {{ single_country.area }}
+                                    </li>
+                                    <li>
+                                       {{ single_country.population }}
+                                    </li>
+                                    <li>
+                                       {{ single_country.language }}
+                                    </li>
+                                    <li>
+                                       {{ single_country.currency }}
+                                    </li>
+                                    <li>
+                                       {{ single_country.government }}
+                                    </li>
+                                    <li>
+                                       {{ single_country.regions }}
+                                    </li>
+                                 </div>
+                                 <!-- <div class="quick-facts py-4">
+                                    <h3 class="fw-bold mb-4">Quick Facts</h3>
+                                    <ul class="list-unstyled facts-list">
+                                       <li>
+                                          {{ single_country.country_description
+                                          }}
+                                       </li>
+                                    </ul>
+                                    <div class="quick-facts-content">
+                                       <p>
+                                          {{ single_country.country_description
+                                          }}
+                                       </p>
+                                    </div>
+                                 </div> -->
+                              </div>
                                  <!-- <div class="quick-facts py-4">
                                     <h3 class="fw-bold mb-4">Quick Facts</h3>
                                     <ul class="list-unstyled facts-list">
@@ -387,27 +430,27 @@
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="index.html">Home</a>
+                           ><a href="{% url 'index' %}">Home</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="aboutus.html">About Us</a>
+                           ><a href="{% url 'aboutus' %}">About Us</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="services.html">Services</a>
+                           ><a href="{% url 'servicedetails' service_id='1' sfaqid='1' %}">Services</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="career.html">Careers</a>
+                           ><a href="{% url 'vacancies' cid='1' vacancy_id='1' cfaqid=1 %}">Vacancies</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="contactus.html">Contact Us</a>
+                           ><a href="{% url 'index' %}">Contact Us</a>
                         </li>
                      </ul>
                   </div>
@@ -419,27 +462,27 @@
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="index.html">Home</a>
+                           ><a href="{% url 'index' %}">Home</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="aboutus.html">About Us</a>
+                           ><a href="">About Us</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="services.html">Services</a>
+                           ><a href="{% url 'servicedetails' service_id='1' sfaqid='1' %}">Services</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="career.html">Vacancies</a>
+                           ><a href="{% url 'vacancies' cid='1' vacancy_id='1' cfaqid=1 %}">Vacancies</a>
                         </li>
                         <li>
                            <span
                               ><i class="bi bi-chevron-double-right"></i></span
-                           ><a href="contactus.html">Contact Us</a>
+                           ><a href="{% url 'contact' %}">Contact Us</a>
                         </li>
                      </ul>
                   </div>
