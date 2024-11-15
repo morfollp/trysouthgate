@@ -39,7 +39,7 @@
                                 {% for service in services %}
 
                                     <button onclick="location.href='{% url 'servicedetails' service_id=service.sid sfaqid=faqs.sfaqid %}'"
-                                        class="nav-link active"
+                                        class="nav-link nav-link {% if activeservice ==  service.title %}active{% endif %}"
                                         id="v-pills-home-tab"
                                         data-bs-toggle="pill"
                                         data-bs-target="#v-pills-home"
@@ -109,11 +109,11 @@
                                                    {{ single_services.title2 }}
                                                 </h1>
                                             </div> -->
-                                            <!-- <div class="content-text">
+                                            <div class="content-text">
                                                 <p>
                                                     {{ single_services.description2 }}
                                                 </p>
-                                            </div> -->
+                                            </div>
                                             <div
                                                 class="service-features row mt-5"
                                             >

@@ -15,6 +15,7 @@ def index(request):
     'countries': countries,
     'services': services,
     'testimonials': testimonials,
+    'nbar':'index',
 
     }
     return render(request, 'pages/index.html', context)
@@ -25,6 +26,7 @@ def about(request):
     context={
     'services': services,
     'countries': countries,
+    'nbar':'about',
     }
     return render(request, 'pages/aboutus.html', context)
 
@@ -34,12 +36,17 @@ def servicedetails(request, service_id, sfaqid):
     single_services= Service.objects.get(sid=service_id)
     faqs= ServiceFaq.objects.get(sfaqid=sfaqid)
     servicefaqs= ServiceFaq.objects.filter(service__sid=service_id)
+    activeservice=single_services.title
+
     context={
     'single_services': single_services,
     'services': services,
     'faqs': faqs,
     'servicefaqs':servicefaqs,
+    'nbar':'servicedetails',
+    'activeservice': activeservice,
     }
+    
     return render(request, 'pages/servicedetails.html', context)
 
 def jobvacancies(request, cid, vacancy_id, cfaqid):
@@ -51,7 +58,7 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
 
     faqs= CountryFaq.objects.get(cfaqid=cfaqid)
     countryfaqs= CountryFaq.objects.filter(country__cid=cid)
-
+    activecountry=single_country.name
 
 
     context={
@@ -62,6 +69,8 @@ def jobvacancies(request, cid, vacancy_id, cfaqid):
     'faqs':faqs,
     'countryfaqs': countryfaqs,
    'vacancy_url': reverse('vacancies', args=[vacancies.country.cid, vacancies.vid, faqs.cfaqid]),
+   'nbar':'jobvacancies',
+   'activecountry':activecountry,
     
 
     }
@@ -90,7 +99,7 @@ def contact(request):
         # send_email = EmailMessage(mail_subject, message, to=['neerajjpgvr@gmail.com'])
         # send_email.send()
         return HttpResponse('<h1>Thanks for contacting us</h1>')
-    return render(request, 'pages/contact.html', {})
+    return render(request, 'pages/contact.html', {'nbar':'contact',})
 
 
 

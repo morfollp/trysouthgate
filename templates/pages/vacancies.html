@@ -66,40 +66,36 @@
                   class="collapse navbar-collapse"
                   id="navbarSupportedContent"
                >
-                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                     <li class="nav-item">
-                        <a
-                           class="nav-link active"
-                           aria-current="page"
-                           href="{% url 'index' %}"
-                           >Home</a
-                        >
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'aboutus' %}"
-                           >About Us</a
-                        >
-                     </li>
-                     <li class="nav-item">
-                        <a
-                           class="nav-link"
-                           href="{% url 'servicedetails' service_id='1' sfaqid='1' %}"
-                           >Services</a
-                        >
-                     </li>
-                     <li class="nav-item">
-                        <a
-                           class="nav-link"
-                           href="{% url 'vacancies' cid='1' vacancy_id='1' cfaqid=1 %}"
-                           >Vacancies</a
-                        >
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}"
-                           >Contact Us</a
-                        >
-                     </li>
-                  </ul>
+                                          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {% if nbar == 'index' %}active{% endif %}"
+                                    aria-current="page"
+                                    href="{% url 'index' %}"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if nbar == 'about' %}active{% endif %}" href="{% url 'aboutus' %}"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if nbar == 'servicedetails' %}active{% endif %}" href="{% url 'servicedetails' service_id='1' sfaqid='1' %}"
+                                    >Services</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if nbar == 'jobvacancies' %}active{% endif %}" href="{% url 'vacancies' cid='1' vacancy_id='1' cfaqid=1 %}"
+                                    >Vacancies</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if nbar == 'contact' %}active{% endif %}" href="{% url 'contact' %}"
+                                    >Contact Us</a
+                                >
+                            </li>
+                        </ul>
                </div>
             </div>
          </nav>
@@ -138,7 +134,7 @@
                            {% for country in countries %}
                            <button
                               onclick="location.href='{% url 'vacancies' cid=country.cid vacancy_id=vacancies.vid cfaqid=faqs.cfaqid %}'"
-                              class="nav-link active"
+                              class="nav-link {% if activecountry ==  country.name %}active{% endif %}"
                               id="v-pills-home-tab"
                               data-bs-toggle="pill"
                               data-bs-target="#v-pills-home"
