@@ -154,11 +154,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="faq-session">
+                                            {% if servicefaqs %}
+                                            <div class="faq-session">                                              
                                                 <div class="title-head py-4">
                                                     <h1 class="mainhead">
                                                         Frequently Asked
-                                                        Question
+                                                        Questions
                                                     </h1>
                                                 </div>
                                                 <div
@@ -166,6 +167,7 @@
                                                     id="accordionExample"
                                                 >
                                                     <div class="accordion-item">
+                                                        
                                                         {% for faq in servicefaqs %}
                                                         <h2
                                                             class="accordion-header"
@@ -196,12 +198,19 @@
                                                             </div>
                                                         </div>
                                                         {% endfor %}
-                                                    </div>
-
                                                 </div>
                                             </div>
                                         </div>
+                                        {% else %}
+                                        <div class="title-head py-4">
+                                                    <h1 class="mainhead">
+                                                        No common FAQs!
+                                                    </h1>
+                                                </div>
+
+                                        {% endif %}
                                     </div>
+                                   
                                 </div>
                             </div>
                         </div>

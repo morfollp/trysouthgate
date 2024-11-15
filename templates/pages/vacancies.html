@@ -216,6 +216,7 @@
                                     </div>
                                  </div> -->
                               </div>
+                              {% if country_vacancies %}
                               <div class="job-listing">
                                  <div class="title-head py-4">
                                     <h1 class="mainhead mb-4">Jobs listed</h1>
@@ -268,7 +269,8 @@
                                     </div>
                                  </div>
                               </div>
-
+                              {% endif %}
+                              {% if countryfaqs %}
                               <div class="faq-session">
                                  <div class="title-head py-4">
                                     <h1 class="mainhead">
@@ -309,6 +311,14 @@
                                     </div>
                                  </div>
                               </div>
+                              {% else %}
+                               <div class="title-head py-4">
+                                                    <h1 class="mainhead">
+                                                        No common FAQs!
+                                                    </h1>
+                                                </div>
+
+                                        {% endif %}
                            </div>
                         </div>
                         <!-- --content------- -->
