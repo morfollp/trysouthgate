@@ -593,6 +593,7 @@ header:hover .owl-next {
 .item-card .card-body .card-inner h5 {
    font-size: 22px;
    font-weight: var(--font-weight);
+   max-width: 75%;
 }
 
 .item-card .card-body .card-inner h5 a {
@@ -1506,10 +1507,15 @@ header:hover .owl-next {
    font-weight: var(--weight-medium);
 }
 
+.content-section .banner,
 .tab-content .banner {
    max-height: 400px;
    overflow: hidden;
    position: relative;
+}
+
+.tab-content .banner {
+   max-height: 550px;
 }
 
 .tab-content .banner::after {
@@ -1523,10 +1529,12 @@ header:hover .owl-next {
    opacity: 0.4;
 }
 
+.content-section .banner img,
 .tab-content .banner img {
    object-fit: cover;
    height: 100%;
    width: 100%;
+   max-height: 400px;
 }
 
 .faq-session {
@@ -1622,6 +1630,9 @@ header:hover .owl-next {
    border-bottom: 1px solid #fff;
    padding-bottom: 5px;
    letter-spacing: 1px;
+   background: rgb(8, 118, 255, 0.65);
+   padding: 10px 25px;
+   border-radius: 3px;
 }
 
 .jobList {

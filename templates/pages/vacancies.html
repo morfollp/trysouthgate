@@ -235,6 +235,11 @@
                                                    data-title="{{ vacancy.title }}"
                                                    data-description="{{ vacancy.description }}"
                                                    data-salary="{{ vacancy.salary }}"
+                                                   data-food="{{ vacancy.food }}"
+                                                   data-accomodation="{{ vacancy.accomodation }}"
+                                                   data-processing_time="{{ vacancy.processing_time }}"
+                                                   data-post_date="{{ vacancy.post_date }}"
+                                                   data-last_date="{{ vacancy.last_date }}"
                                                    ><img
                                                       src="{{ vacancy.image.url }}"
                                                       alt="Driver VIsa"
@@ -532,7 +537,12 @@
                <div class="modal-body">
                   <div class="job-details">
                      <p>{{ vacancy.description }}</p>
-                     <h4>Salary: {{ vacancy.salary }}</h4>
+                     <p><strong>Salary :</strong> {{ vacancy.salary }}</p>
+                     <p><strong>Food :</strong> {{ vacancy.food }}</p>
+                     <p><strong>Accomodation :</strong> {{ vacancy.accomodation }}</p>
+                     <p><strong>Processing Time :</strong> {{ vacancy.processing_time }}</p>
+                     <p><strong>Post Date :</strong> {{ vacancy.post_date }}</p>
+                     <p><strong>Last Date :</strong> {{ vacancy.last_date }}</p>
                   </div>
                </div>
                <div class="modal-footer">
@@ -634,6 +644,11 @@
             const title = button.getAttribute('data-title');
             const description = button.getAttribute('data-description');
             const salary = button.getAttribute('data-salary');
+            const food = button.getAttribute('data-food');
+            const accomodation = button.getAttribute('data-accomodation');
+            const processing_time = button.getAttribute('data-processing_time');
+            const post_date = button.getAttribute('data-post_date');
+            const last_date = button.getAttribute('data-last_date');
 
             const modalTitle = jobDetailsModal.querySelector('.modal-title');
             const modalBody = jobDetailsModal.querySelector('.modal-body p');
@@ -642,6 +657,11 @@
             modalTitle.textContent = `Vacancy for ${title}`;
             modalBody.textContent = description;
             modalSalary.textContent = `Salary: ${salary}`;
+            modalFood.textContent = `food: ${food}`;
+            ModalAccomodation.textContent = `accomodation: ${accomodation}`;
+            Processing.textContent = `processing_time: ${processing_time}`;
+            modalPostDate.textContent = `post_date: ${post_date}`;
+            modalLastDate.textContent = `last_date: ${last_date}`;
          });
       </script>
       <script>
