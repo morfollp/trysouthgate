@@ -1784,6 +1784,9 @@ header:hover .owl-next {
    .about-pic-thumbnail {
       position: relative;
    }
+   .navbar-brand {
+      width: 20%;
+   }
 }
 
 @media (min-width: 576px) {
